@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        .avatar{
+            color: red;
+            font-size: 20px;
+            background-image: url(./после.jpg);
+            background-repeat: no-repeat;
+            width: 330px;
+            background-size: cover;
+          
+        }
+        button{
+            margin: 10px;
+            border: 2px solid rgb(95, 66, 66);
+            font-size: 15px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="item" id="block">
+         <img id="image" width="330px" src="./до..jpg" alt="">
+    </div>
+   
+    <button onclick="onRemove()">Удалить</button>
+    <button onclick="onAdd()">Добавить</button>
+    <button onclick="onToggle()">Toggle</button>
+
+    <script>
+        const block = document.getElementById('block');
+        const image = document.getElementById('image');
+        
+        const onAdd = () =>{
+            block.classList.add('avatar');
+            image.src = './после.jpg';
+        }
+        const onRemove = () =>{
+            block.classList.remove('avatar');
+            image.src = './до..jpg';
+        }
+        const onToggle = () =>{
+            block.classList.toggle('avatar');
+            if(block.classList.contains('avatar')){
+                image.src = './после.jpg';
+            } else {
+                image.src = './до..jpg';
+            }
+        }
+    </script>
+</body>
+</html>
